@@ -9,4 +9,16 @@ def character_count(text):
             character_dict[c] += 1
         else: 
             character_dict[c] = 1
-    print (character_dict)
+    return character_dict
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_char_list(dict):
+    dict_list = []
+    for char in dict:
+        if char.isalpha():
+            dict_list.append({"char": char, "num" : dict[char]})
+    dict_list.sort(reverse=True, key = sort_on)
+    return dict_list
+    
